@@ -29,8 +29,14 @@ const router = createRouter({
 			
 		},
 		{
-			path: '/create',
-			name: 'create',
+			path: '/projects/create',
+			name: 'project.create',
+			component: () => CreatProject,
+			
+		},
+		{
+			path: '/projects/edit/:id',
+			name: 'project.edit',
 			component: () => CreatProject,
 			
 		},

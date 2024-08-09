@@ -41,7 +41,7 @@
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">LINKS</router-link>
               <router-link to="/projects"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">PROJECTS</router-link>
-                <router-link to="/create"
+                <router-link to="/projects/create"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">CREATE PROJECTS </router-link>
                 <router-link to="/list"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">LIST PROJECTS </router-link>

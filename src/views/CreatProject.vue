@@ -30,9 +30,6 @@
 <script>
 export default {
     name: 'CreatProject',
-    // mounted() {
-    //     this.save();
-    // },
     data() {
         return {
             users: {
@@ -44,6 +41,13 @@ export default {
                 email: '',
             }
         }
+    },
+    created(){
+       let id = this.$route.params.id;
+       if (id) {
+        this.getProject(id);
+       }
+       
     },
     methods: {
         validate() {
@@ -68,20 +72,24 @@ export default {
                     })
                 } catch (error) {
                     if (error.response) {
-                        // The request was made and the server responded with a status code
-                        // that falls out of the range of 2xx
                         console.error('Error Response:', error.response.data);
                     } else if (error.request) {
-                        // The request was made but no response was received
                         console.error('No Response:', error.request);
                     } else {
-                        // Something happened in setting up the request that triggered an Error
                         console.error('Error', error.message);
                     }
                     console.error('Config:', error.config);
                 }
             }
 
+        },
+        getProject(id) {
+            this.$request.get(`http://127.0.0.1:3336/user/${id}`).then(res => {
+                if (res.status == 200) {
+                    this.users = res.data.data
+                }
+                
+            })
         }
     }
 }
